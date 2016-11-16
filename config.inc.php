@@ -6,7 +6,7 @@ $CFG = array(
     "db_host" => "localhost",
     "db_user" => "root",
     "db_password" => "admin",
-    "db_name" => "gdsp"
+    "db_name" => "eleicoes"
 );
 
 $CFG = (object) $CFG;
