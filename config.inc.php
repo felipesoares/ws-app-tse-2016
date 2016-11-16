@@ -1,12 +1,19 @@
 <?php
 
 require_once "adodb5/adodb.inc.php";
-
+/*
 $CFG = array(
     "db_host" => "localhost",
     "db_user" => "root",
     "db_password" => "admin",
     "db_name" => "eleicoes"
+);
+*/
+$CFG = array(
+    "db_host" => "192.185.217.232",
+    "db_user" => "cafecomn_felipe",
+    "db_password" => "inmetal123a",
+    "db_name" => "cafecomn_felipe"
 );
 
 $CFG = (object) $CFG;
