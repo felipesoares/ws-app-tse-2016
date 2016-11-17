@@ -5,6 +5,26 @@
 
   $app = new \Slim\Slim();
 
+  $app->get('/login/:cpf/:senha', function ($cpf, $senha) {
+
+    $query = "SELECT * FROM `login` WHERE cpf = ? AND senha = md5(?)";
+    global $DB;
+
+    $rs = $DB->Execute($query, array($cpf, $senha));
+
+    $sucesso = false;
+    if( $rs->RecordCount() )
+      $sucesso = true;
+    
+    $data = array(
+      "success" => $sucesso
+    );
+
+    header('Content-Type: application/json');
+    echo json_encode($data); exit;
+
+  });
+
   $app->get('/candidatos/cidades', function () {
 
     $query = "SELECT SIGLA_UE, DESCRICAO_UE FROM candidatos GROUP BY SIGLA_UE ORDER BY DESCRICAO_UE ASC";
