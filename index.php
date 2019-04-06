@@ -1,10 +1,9 @@
 <?php
   // importa o arquivo de configuração e as libs necessárias por autoload
   require 'config.inc.php';
-  require 'vendor/autoload.php';
 
   // instancia a api
-  $app = new \Slim\Slim();
+  $app = new \Slim\App;
 
   // método responsável por retornar os dados de autenticação dos usuários
   $app->get('/login/:cpf/:senha', function ($cpf, $senha) {
